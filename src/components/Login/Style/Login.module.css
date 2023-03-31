@@ -1,0 +1,39 @@
+.form {
+    width: 30%;
+    background-color: #a8d441;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(0, 225, 255);
+    position: absolute;
+    top: 60%;
+    right: 200px;
+    transform: translateY(-50%);
+}
+
+label {
+    color: rgb(6, 101, 245)
+}
+
+input {
+    padding: 8px;
+    margin: 4px;
+    font-size: 16px;
+    width: 90%;
+
+}
+
+.btn {
+    background-color: rgb(12, 12, 12);
+    color: rgb(6, 101, 245);
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.4s ease;
+    box-shadow: 0px 1px 1px black;
+}
+
+button:hover {
+    background-color: rgb(0, 255, 0);
+    color: rgb(44, 90, 44);
+}
