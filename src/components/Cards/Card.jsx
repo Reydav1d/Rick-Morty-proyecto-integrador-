@@ -1,4 +1,4 @@
-import "./Card.css";
+import Styles from './Style/Card.module.css';
 import { Link } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { addFav, removeFav } from "/Users/Mi PC/Desktop/RickYMorty/rick-y-morty/src/redux/actions/actions";
