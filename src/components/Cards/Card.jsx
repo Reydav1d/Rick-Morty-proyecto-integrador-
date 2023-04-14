@@ -9,10 +9,10 @@ function Card(props) {
   const {
     id,
     name,
-    status,
-    species,
-    gender,
-    origin,
+    // status,
+    // species,
+    // gender,
+    // origin,
     image,
     onClose,
     addFav,
@@ -41,22 +41,29 @@ function Card(props) {
   }, [myFavorites]);
 
   return (
-    <div className="card">
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
-      <button onClick={() => onClose(id)}>X</button>
-      <Link className="link" to={`/detail/${id}`}>
-        <h2>{name}</h2>
-        {/* <h2>{status}</h2>
+    <div className={Styles.card}>
+      <div className={Styles.wrapper}>
+        <figure>
+          {isFav ? (
+            <button onClick={handleFavorite} className={Styles.fav}><ion-icon name="heart-dislike"></ion-icon></button>
+          ) : (
+            <button onClick={handleFavorite} className={Styles.fav}><ion-icon name="heart"></ion-icon></button>
+          )}
+          <button onClick={() => onClose(id)} className={Styles.close}>
+            <ion-icon name="close-circle-outline"></ion-icon>
+          </button>
+          <Link className="link" to={`/detail/${id}`}>
+            {/* <h2>{status}</h2>
         <h2>{species}</h2>
         <h2>{gender}</h2> */}
-        <h2>{origin}</h2>
-        <img src={image} alt={name} />
-      </Link>
-    </div>
+            {/* <h2>{origin}</h2> */}
+            <h2 className={Styles.name} >{name}</h2>
+            <img src={image} alt={name} />
+            {/* <h1></h1> */}
+          </Link>
+        </figure>
+      </div>
+    </div >
   );
 }
 

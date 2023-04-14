@@ -7,7 +7,7 @@ const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const regexPassword =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,10}/;
 
-export default function Login({login}) {
+export default function Login({ login }) {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -42,10 +42,10 @@ export default function Login({login}) {
       })
     );
   }
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.prevent.default()
     const aux = Object.keys(errors)
-    if(aux.length===0){
+    if (aux.length === 0) {
       setInputs({
         email: "",
         password: "",
@@ -60,30 +60,35 @@ export default function Login({login}) {
     return alert("Error")
   }
   return (
-    <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label>Email: </label>
-        <input
-          name="email"
-          value={inputs.email}
-          onChange={handleChange}
-          placeholder=""
-        ></input>
-        <p>{errors.email}</p>
-        <label>Password: </label>
-        <input
-          name="password"
-          value={inputs.password}
-          onChange={handleChange}
-          placeholder=""
-        ></input>
-        <p>{errors.password}</p>
-        {Object.keys(errors).length === 0 ? (
-          <Link to="/home">
-            <button className={styles.btn} type="submit">Ingresar</button>
-          </Link>
-        ) : null}
-      </form>
+    < div className={styles.fondo}>
+      <div className={styles.container}>
+        <h2>Login</h2>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label className={styles.iconmail}><ion-icon name="mail-outline"></ion-icon></label>
+          <input
+            name="email"
+            value={inputs.email}
+            onChange={handleChange}
+            placeholder="Introduce tu email"
+            className={styles.inputmail}
+          ></input>
+          <p>{errors.email}</p>
+          <label className={styles.iconpassword}><ion-icon name="lock-closed-outline"></ion-icon></label>
+          <input
+            name="password"
+            value={inputs.password}
+            onChange={handleChange}
+            placeholder="Introduce tu contraseña"
+            className={styles.inputpassword}
+          ></input>
+          <p>{errors.password}</p>
+          {Object.keys(errors).length === 0 ? (
+            <Link to="/home">
+              <button className={styles.btn} type="submit">Ingresar</button>
+            </Link>
+          ) : null}
+        </form>
+      </div>
     </div>
   );
 }

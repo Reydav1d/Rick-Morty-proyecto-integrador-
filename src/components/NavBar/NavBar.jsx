@@ -8,16 +8,24 @@ export default function NavBar({ onSearch, logout }) {
   return (
     <div className={Styles.nav}>
       <Link to="/home">
-        <button className={Styles.btns}>Home</button>
+        <button className={Styles.btns}>
+        <ion-icon name="home-outline"></ion-icon>
+        </button>
       </Link>
       <Link to="/about">
-        <button className={Styles.btns}>About</button>
+        <button className={Styles.btns}>
+        <ion-icon name="information-circle-outline"></ion-icon>
+        </button>
       </Link>
       <Link to="/favorites">
-        <button className={Styles.btns}>Favorites</button>
+        <button className={Styles.btns}>
+        <ion-icon name="heart"></ion-icon>
+        </button>
       </Link>
       <SearchBar onSearch={onSearch} />
-      <button className={Styles.log} onClick={logout}>LogOut</button>
+      <button className={Styles.log} onClick={logout}>
+      <ion-icon name="log-out-outline"></ion-icon>
+      </button>
     </div>
   );
 }
