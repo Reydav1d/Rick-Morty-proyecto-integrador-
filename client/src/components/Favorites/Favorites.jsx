@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Cards/Card";
 import { connect } from "react-redux";
-import { removeFav } from "/Users/Mi PC/Desktop/RickYMorty/rick-y-morty/src/redux/actions/actions";
+import { removeFav } from "../../redux/actions/actions";
 
 function Favorites({ myFavorites, onClose, removeFav }) {
   function closeFavorite(id) {
