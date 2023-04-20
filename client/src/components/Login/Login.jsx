@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from './Style/Login.module.css'
+import styles from "./Style/Login.module.css";
 
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const regexPassword =
@@ -43,21 +43,35 @@ export default function Login({ login }) {
     );
   }
   function handleSubmit(e) {
-    e.prevent.default()
-    const aux = Object.keys(errors)
+    e.preventDefault();
+    const aux = Object.keys(errors);
+    // console.log("submit");
     if (aux.length === 0) {
+      //   // enviamos fafafafaf
+      //   setInputs({
+      //     email: "",
+      //     password: "",
+      //   });
+      //   setErrors({
+      //     email: "",
+      //     password: "",
+      //   });
+      //   return login(inputs);
+      // }
+      // return alert("Error");
+      // enviamos fafafafaf
+      login(inputs);
       setInputs({
         email: "",
         password: "",
-      })
+      });
       setErrors({
         email: "",
         password: "",
-      })
-      login(inputs)
-      return alert("OKKKKKKK")
+      });
+    } else {
+      return alert("Error");
     }
-    return alert("Error")
   }
   return (
     < div className={styles.fondo}>
